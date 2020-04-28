@@ -1,0 +1,12 @@
+.card-about{
+  background: #fff;
+  color: #000;
+  height: 100%;
+}
+.card-header{
+  margin-top: 1rem !important;
+}
+.card-content{
+  margin-top: 2rem;
+  text-align: justify;
+}

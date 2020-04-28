@@ -1,0 +1,18 @@
+/* Add application styles & imports to this file! */
+html, body{
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.active {
+  border: 1px solid rgb(123, 100, 250);
+  border-radius: 5px;
+}
+
+.mat-chip-list-wrapper {
+  margin: 4px !important;
+}
