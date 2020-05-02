@@ -1,0 +1,21 @@
+<div class="container">
+  <!-- <a [routerLink]="['./home']">Wstecz</a> -->
+  <button mat-button (click)="goBack()">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+
+  <mat-card class="post-card">
+    <mat-card-header>
+      <mat-card-title>
+        {{ post.titlePost }}
+        {{ post.id }}
+      </mat-card-title>
+    </mat-card-header>
+    <img matCardImage class="img-center" [src]="post.imagePost" />
+    <mat-card-content>
+      <p>
+        {{post.contentPost}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
