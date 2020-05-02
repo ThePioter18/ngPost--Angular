@@ -22,29 +22,30 @@
 } */
 
 p {
-  white-space: nowrap; 
-  overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
-a{
+a {
   cursor: pointer;
   color: #fff;
   text-decoration: none;
 }
 
-.card-footer{
+.card-footer {
   margin-top: 2.5rem !important;
 }
 
 
-@media( max-width: 1000px){
-  .container{
-    grid-template-columns: 50% 50%;  
+@media(max-width: 1000px) {
+  .container {
+    grid-template-columns: 50% 50%;
   }
 }
-@media( max-width: 600px){
-  .container{
-    grid-template-columns: 80%;  
+
+@media(max-width: 600px) {
+  .container {
+    grid-template-columns: 80%;
   }
 }

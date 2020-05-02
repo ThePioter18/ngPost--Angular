@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   public posts: {
     id: string;
     titlePost: string;
