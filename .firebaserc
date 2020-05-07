@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ngpost-723ee": {
+      "hosting": {
+        "ngPost": [
+          "ngpost-723ee"
+        ]
+      }
+    }
+  }
+}

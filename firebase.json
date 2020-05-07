@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "ngPost",
+      "public": "dist/ngPost",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

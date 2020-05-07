@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="post; else loading">
   <button mat-button (click)="goBack()">
     <mat-icon>keyboard_backspace</mat-icon>
   </button>
@@ -7,7 +7,6 @@
     <mat-card-header>
       <mat-card-title>
         {{ post.titlePost }}
-        {{ post.id }}
       </mat-card-title>
     </mat-card-header>
     <img matCardImage class="img-center" [src]="post.imagePost" />
@@ -18,3 +17,8 @@
     </mat-card-content>
   </mat-card>
 </div>
+<ng-template #loading>
+  <div class="container-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

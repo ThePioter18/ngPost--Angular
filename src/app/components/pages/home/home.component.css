@@ -13,13 +13,7 @@
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
-  /* text-align: center; */
 }
-
-/* img { Przez to nie działa button 'View'
-  height: 100%;
-  object-fit: contain;
-} */
 
 p {
   white-space: nowrap;
@@ -37,6 +31,13 @@ a {
   margin-top: 2.5rem !important;
 }
 
+.btn-view-post {
+  background: #999;
+}
+
+.btn-view-post:hover {
+  background: #bfbfbf;
+}
 
 @media(max-width: 1000px) {
   .container {

@@ -26,3 +26,18 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.container-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.angular {
+  background: orangered !important;
+}
+
+.firebase {
+  background: orange !important;
+}
