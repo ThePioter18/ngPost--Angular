@@ -1,4 +1,3 @@
-import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -13,7 +12,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from './../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,10 +23,12 @@ import { AngularFireModule } from '@angular/fire';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
 
     AppRoutingModule,
     MaterialModule,
