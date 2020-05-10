@@ -15,10 +15,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from './../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
+    ContainerAppComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,24 +10,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PostComponent implements OnInit {
 
-  // public post: {
-  //   id: string;
-  //   titlePost: string;
-  //   contentPost: string;
-  //   imagePost: string;
-  // } = {
-  //     id: '1',
-  //     titlePost: 'Post',
-  //     // tslint:disable-next-line:max-line-length
-  //     imagePost: 'https://picsum.photos/800/800?grayscale'
-  //   };
-
   public post: Post;
 
   constructor(private postService: PostService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    // this.post.id = this.route.snapshot.params.id;
     const id = this.route.snapshot.params.id;
 
     this.postService.getOnePost(id).subscribe(onePost => {
