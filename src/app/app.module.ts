@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
+import { NewPostModule } from './components/posts/new-post/new-post.module';
+import { NewPostComponent } from './components/posts/new-post/new-post.component';
 
 /* Firebase */
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -14,19 +19,20 @@ import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from './../environments/environment';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     ContainerAppComponent,
+    ModalComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -35,7 +41,9 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
 
     AppRoutingModule,
     MaterialModule,
+    NewPostModule,
   ],
+  entryComponents: [ModalComponent],
   providers: [
     { provide: StorageBucket, useValue: 'gs://ngpost-723ee.appspot.com' }
   ],
