@@ -42,9 +42,14 @@ export class PostService {
     return this.postsColection.doc(post.id).delete();
   }
 
-  public editPost(post: Post) {
+  public editPost(post: Post, newImage?: File) {
     // Firebase/update
-    return this.postsColection.doc(post.id).update(post);
+    if (newImage) {
+      this.uploadImage(post, newImage);
+
+    } else {
+      return this.postsColection.doc(post.id).update(post);
+    }
   }
 
   private savePost(post: Post) {
@@ -55,8 +60,16 @@ export class PostService {
       fileRef: this.filePath,
       tagsPost: post.tagsPost
     };
-    // addPost()
-    this.postsColection.add(postObj);
+
+    if (post.id) {
+      // updatePostId()
+      return this.postsColection.doc(post.id).update(postObj);
+
+    } else {
+      // addPost()
+      return this.postsColection.add(postObj);
+    }
+
   }
 
   private uploadImage(post: Post, image: File) {
@@ -67,9 +80,6 @@ export class PostService {
       finalize(() => {
         fileRef.getDownloadURL().subscribe(urlImage => {
           this.downloadURL = urlImage;
-          console.log('URL_IMAGE', urlImage);
-          console.log('POST', post);
-
           // addPost()
           this.savePost(post);
 

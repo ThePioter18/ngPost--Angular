@@ -23,10 +23,11 @@ export class NewPostComponent implements OnInit {
 
   ngOnInit() {
   }
+
   addNewPost(data: Post) {
-    console.log('New post', data);
     this.postService.createPostAndUpdatePost(data, this.image);
   }
+
   handleImage(event: any) {
     this.image = event.target.files[0];
   }

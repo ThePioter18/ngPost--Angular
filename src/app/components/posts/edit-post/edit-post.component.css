@@ -12,12 +12,10 @@ form {
   width: 100%;
   background: #4e0561;
   color: #fff;
-
 }
 
 .mat-flat-button:hover {
   background: #3c034b;
-
 }
 
 input {
