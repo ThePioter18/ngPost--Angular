@@ -2,7 +2,7 @@
   <a routerLink="/">{{ Logo }}</a>
   <span style="flex: 1 1 auto;"></span>
 
-  <a routerLink="/admin" routerLinkActive="active" *ngIf="authService.userFire">
+  <a routerLink="/admin" routerLinkActive="active" *ngIf="authService.userFire$ | async">
     <button mat-button>Admin</button>
   </a>
 
@@ -10,7 +10,7 @@
     <button mat-button>About</button>
   </a>
 
-  <a *ngIf="authService.userFire; else showLogin">
+  <a *ngIf="authService.userFire$ | async; else showLogin">
     <button mat-button (click)="onLogout()">Logout</button>
   </a>
   <ng-template #showLogin>
