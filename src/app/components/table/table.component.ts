@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { Post } from './../../shared/models/post.interface';
 import { PostService } from './../posts/post.service';
 import Swal from 'sweetalert2';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material';
 import { ModalComponent } from '../../shared/components/modal/modal.component';
 
 @Component({

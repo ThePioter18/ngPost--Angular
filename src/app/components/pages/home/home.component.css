@@ -14,3 +14,15 @@
   padding: 20px;
   font-size: 150%;
 }
+
+@media(max-width: 1000px) {
+  .container {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media(max-width: 600px) {
+  .container {
+    grid-template-columns: 80%;
+  }
+}
