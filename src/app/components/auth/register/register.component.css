@@ -21,41 +21,14 @@ button {
 
 .btn-login:hover {
   background-color: darkblue;
-
 }
 
 .btn-register {
   background-color: coral;
   color: #fff;
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .btn-register:hover {
   background-color: #ff5a1d;
-}
-
-.btn-google {
-  background-color: #DB4437;
-  color: #fff;
-  margin-top: 15px;
-}
-
-.btn-google:hover {
-  background-color: #d33426;
-}
-
-.container-anonymous {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 15px;
-}
-
-.click-anonymous {
-  font-weight: 500;
-  color: dodgerblue;
-  cursor: pointer;
-}
-
-.click-anonymous:hover {
-  color: mediumblue;
 }

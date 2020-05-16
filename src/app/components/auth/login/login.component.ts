@@ -26,4 +26,20 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/']);
     }).catch(err => console.log('Error', err));
   }
+
+  onLoginAnonymous() {
+    this.authService.LoginByAnonymous().then(() => {
+      this.router.navigate(['/']);
+    }).catch(err => console.log('Error', err));
+  }
+
+  onLoginGoogle() {
+    this.authService.LoginByGoogle().then(() => {
+      this.router.navigate(['/']);
+    }).catch(err => console.log('Error', err));
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
 }

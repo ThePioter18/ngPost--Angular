@@ -6,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 import { Observable } from 'rxjs';
 import { File } from 'src/app/shared/models/file.interface';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +20,34 @@ export class AuthService {
     this.userFire$ = afAuth.authState;
   }
 
+  LoginByAnonymous() {
+    return this.afAuth.auth.signInAnonymously();
+  }
+
+  LoginByGoogle() {
+    return new Promise<any>((resolve, reject) => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('profile');
+      provider.addScope('email');
+      this.afAuth.auth
+        .signInWithPopup(provider)
+        .then(res => {
+          resolve(res);
+        }, err => {
+          console.log(err);
+          reject(err);
+        });
+    });
+  }
+
   loginByEmail(user: UserI) {
     const { email, password } = user;
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  registerByEmail(user: UserI) {
+    const { email, password } = user;
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
   }
 
   logout() {

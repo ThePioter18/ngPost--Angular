@@ -12,6 +12,8 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { NewPostModule } from './components/posts/new-post/new-post.module';
 import { NewPostComponent } from './components/posts/new-post/new-post.component';
+import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
+import { EditPostModule } from './components/posts/edit-post/edit-post.module';
 
 /* Firebase */
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -19,8 +21,6 @@ import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from './../environments/environment';
-import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
-import { EditPostModule } from './components/posts/edit-post/edit-post.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { EditPostModule } from './components/posts/edit-post/edit-post.module';
     ContainerAppComponent,
     ModalComponent,
     NewPostComponent,
-    EditPostComponent
+    EditPostComponent,
   ],
   imports: [
     BrowserModule,

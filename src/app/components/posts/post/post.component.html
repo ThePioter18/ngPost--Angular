@@ -1,24 +1,37 @@
-<div class="container" *ngIf="post; else loading">
-  <button mat-button (click)="goBack()">
-    <mat-icon>keyboard_backspace</mat-icon>
-  </button>
+<mat-card-header>
+  <mat-card-title>
+    <a [routerLink]="['./post',post.id]">
+      {{ post.titlePost }}
+    </a>
+  </mat-card-title>
+</mat-card-header>
 
-  <mat-card class="post-card">
-    <mat-card-header>
-      <mat-card-title>
-        {{ post.titlePost }}
-      </mat-card-title>
-    </mat-card-header>
-    <img matCardImage class="img-center" [src]="post.imagePost" />
-    <mat-card-content>
-      <p>
-        {{post.contentPost}}
-      </p>
-    </mat-card-content>
-  </mat-card>
-</div>
+<img *ngIf="post.imagePost; else loading" matCardImage [src]="post.imagePost" />
 <ng-template #loading>
   <div class="container-spinner">
     <mat-spinner></mat-spinner>
   </div>
 </ng-template>
+
+<mat-card-content>
+  <p class="content">
+    {{post.contentPost}}
+  </p>
+</mat-card-content>
+<mat-divider></mat-divider>
+
+<mat-card-footer class="card-footer">
+  <mat-chip-list aria-label="info selection">
+
+    <mat-chip selected *ngFor="let tag of post.tagsPost" [ngClass]="tag">
+      {{tag.charAt(0).toUpperCase()+ tag.slice(1)}}
+    </mat-chip>
+
+    <span style="flex: 1 1 auto;"></span>
+
+    <button class="btn-view-post" mat-raised-button matTooltip="Info about the post" (click)="viewPost(post)">
+      View
+    </button>
+
+  </mat-chip-list>
+</mat-card-footer>

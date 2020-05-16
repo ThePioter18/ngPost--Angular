@@ -1,7 +1,7 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { PostService } from './../../posts/post.service';
 import { Post } from './../../../shared/models/post.interface';
-import { PostService } from './../post.service';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -10,20 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PostComponent implements OnInit {
 
-  public post: Post;
+  @Input() post: Post;
 
-  constructor(private postService: PostService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
-    const id = this.route.snapshot.params.id;
+  ngOnInit() { }
 
-    this.postService.getOnePost(id).subscribe(onePost => {
-      this.post = onePost;
-    });
+  viewPost(post) {
+    this.router.navigate([`home/post/${post.id}`]);
   }
-
-  goBack(): void {
-    this.router.navigate(['/home']);
-  }
-
 }
