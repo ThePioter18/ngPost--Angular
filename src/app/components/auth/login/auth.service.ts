@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 import { Observable } from 'rxjs';
-import { File } from 'src/app/shared/models/file.interface';
 import * as firebase from 'firebase';
 
 @Injectable({

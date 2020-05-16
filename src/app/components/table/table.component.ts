@@ -6,7 +6,7 @@ import { Post } from './../../shared/models/post.interface';
 import { PostService } from './../posts/post.service';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
+import { ModalComponent } from '../../shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-table',
